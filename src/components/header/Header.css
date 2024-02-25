@@ -1,0 +1,107 @@
+.header .header-one{
+  background: var(--blue);
+}
+
+.header .header-one .flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 2rem 2.2rem 2rem;
+}
+
+.header .header-one .flex .header-means-of-contact{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.6rem;
+}
+
+.header .header-one .flex .header-means-of-contact .means{
+  font-size: 1.5rem;
+  color: var(--white);
+  letter-spacing: 0.1rem;
+}
+
+.header .header-one .flex .header-means-of-contact .means:hover{
+  color: var(--green);
+}
+
+.header .header-one .flex .header-means-of-contact .means svg{
+  margin-right: 0.5rem;
+  font-size: 2.8rem;
+  color: var(--ciano);
+  position: relative;
+  top: 0.85rem;
+}
+
+.header .header-one .flex .header-social-media{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header .header-one .flex .header-social-media svg{
+  color: var(--ciano);
+  font-size: 2.8rem;
+  position: relative;
+  top: 0.80rem;
+}
+
+.header .header-one .flex .header-social-media svg:hover{
+  color: var(--green);
+}
+
+.header .header-one .flex .header-language select{
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 1.6rem;
+  position: relative;
+  top: 0.55rem;
+}
+
+.header .header-one .flex .header-language select > option{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: black;
+}
+
+.header-navbar{
+  background: white;
+}
+
+.header-navbar.active{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-navbar .flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-navbar .flex .header-logo{
+  height: 5rem;
+}
+
+.header-navbar .flex .header-menu{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-navbar .flex .header-menu a{
+  font-size: 1.5rem;
+  color: var(--ciano);
+  text-transform: uppercase;
+}
+
+.header-navbar .flex .header-menu a:hover{
+  color: var(--green);
+}
+
