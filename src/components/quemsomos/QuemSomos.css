@@ -1,24 +1,28 @@
-.quem-somos .quem-somos-img img{
+.quem-somos .imagem img{
   width: 100%;
   height: 51.5rem;
   object-fit: cover;
   display: block;
 }
 
-.quem-somos .quem-somos-content{
+.quem-somos{
+  padding: 0 !important; 
+}
+
+.quem-somos .content{
   background: var(--bg);
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 
-.quem-somos .quem-somos-content .flex{
+.quem-somos .content .flex{
   display: flex;
   align-items: flex-start;
   gap: 3rem;
   flex-wrap: wrap;
 }
 
-.quem-somos .quem-somos-content .flex .quem-somos-title{
+.quem-somos .content .flex .title{
   font-size: 4rem;
   font-weight: 500;
   color: var(--ciano);
@@ -27,14 +31,14 @@
   letter-spacing: -0.1rem;
 }
 
-.quem-somos .quem-somos-content .flex-text{
+.quem-somos .content .flex-text{
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
 }
 
-.quem-somos .quem-somos-content .flex-text p{
+.quem-somos .content .flex-text p{
   flex-shrink: 0;
   max-width: 40rem;
   color: var(--green);

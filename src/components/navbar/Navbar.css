@@ -1,0 +1,42 @@
+.navbar{
+  background: white;
+}
+
+.navbar.active{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .flex .logo{
+  height: 5rem;
+  width: auto;
+}
+
+.navbar .flex .menu{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar .flex .menu a{
+  font-size: 1.5rem;
+  color: var(--ciano);
+  text-transform: uppercase;
+}
+
+.navbar .flex .menu a:hover{
+  color: var(--green);
+}
+
+@media(max-width: 960px){
+  .navbar .flex .logo{
+    height: 4rem;
+  }
+}

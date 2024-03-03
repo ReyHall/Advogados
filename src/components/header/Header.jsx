@@ -1,47 +1,72 @@
 import React from "react";
-import HeaderMeansOfContact from "./HeaderMeansOfContact";
-import HeaderSocialMedia from './HeaderSocialMedia'
-import HeaderLanguage from "./HeaderLanguage";
-import HeaderLogo from './HeaderLogo';
-import HeaderMenu from './HeaderMenu';
-
+import { FiPhone } from "react-icons/fi";
+import { RxEnvelopeClosed } from "react-icons/rx";
+import { PiMapPinLight } from "react-icons/pi";
+import { BsFacebook } from "react-icons/bs";
+import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import './Header.css';
 
+const means = [
+  { icon: <PiMapPinLight />, text: 'Onde estamos', href: '#contato' },
+  { icon: <FiPhone />, text: '(91) 988923-0344', href: 'tel:91889230344' },
+  { icon: <RxEnvelopeClosed />, text: 'exemplo@trm.com.br', href: 'mailto:' }
+];
+
+const socialMedia = [
+  { icon: <BsFacebook />, link: '' },
+  { icon: <FaTwitter />, link: '' },
+  { icon: <FaLinkedin />, link: '' }
+];
+
+const options = [
+  { lang: 'PT' },
+  { lang: 'EN' }
+]
+
+
+
 function Header() {
-  const [nav, setNav] = React.useState('');
+  const [width, setWidth] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
-
-    function handleScroll() {
-      setNav(window.scrollY >= 63.5 ? 'active' : '');
+    function handleResize() {
+      setWidth(window.innerWidth);
     }
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [])
 
   return (
-    <>
-      <header className="header">
+
+    <header className="header">
+      {width >= 830 && (
         <div className="header-one">
           <div className="flex">
-            <HeaderMeansOfContact />
-            <HeaderSocialMedia />
-            <HeaderLanguage />
+            <div className="means-of-contact">
+              {means.map(({ icon, text, href }, index) => (
+                <a className="means" href={href} key={index}> {icon} {text}</a>
+              ))}
+            </div>
+
+            <div className="social-media">
+              {socialMedia.map(({ icon, link }, index) => (
+                <a href={link} key={index}> {icon} </a>
+              ))}
+            </div>
+
+            <form className="language" action="">
+              <select name="" id="">
+                {options.map(({ lang }, index) => (
+                  <option value={lang} key={index}>{lang}</option>
+                ))}
+              </select>
+            </form>
           </div>
         </div>
-      </header >
+      )}
 
-      <nav className={`header-navbar ${nav}`} >
-        <div className="container flex">
-          <HeaderLogo />
-          <HeaderMenu />
-        </div>
-      </nav>
-    </>
+    </header >
 
   )
 }

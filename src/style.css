@@ -6,6 +6,7 @@
   --green: #59846a;
   --white: #ffffff;
   --bg: #E7EDEF;
+  --light-blue: #f7f9fc;
 }
 
 *{
@@ -33,6 +34,30 @@ body{
   padding: 2rem;
 }
 
+section{
+  padding: 3rem 2rem !important;
+}
+
+
+.sub-title{
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+
+.underline-img{
+  display: block;
+  margin: 0 auto;
+  height: 2rem;
+  margin-top: 1rem;
+}
+
+.sub-title svg{
+  position: relative;
+  top: 0.3rem;
+}
 
 @media(max-width: 960px){
   html{
