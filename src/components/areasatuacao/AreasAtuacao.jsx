@@ -23,20 +23,20 @@ import 'swiper/css/navigation';
 import './AreasAtuacao.css';
 
 const slideItem = [
-  { img: DirAdm, text: 'Direito Administrativo'.split(' '), },
-  { img: DirAgro, text: 'Direito Agrário'.split(' '), },
-  { img: DirAmbiental, text: 'Direito Ambiental'.split(' '), },
-  { img: DirCivil, text: 'Direito Cível'.split(' '), },
-  { img: DirComercial, text: 'Direito Comercial'.split(' '), },
-  { img: DirConsumer, text: 'Direito do Consumidor'.split() },
-  { img: DirEcono, text: 'Direito Econômico'.split(' ') },
-  { img: DirEmpresarial, text: 'Direito Empresarial'.split(' ') },
-  { img: DirImobiliario, text: 'Direito Imobiliário'.split(' ') },
-  { img: DirIndeniza, text: 'Direito Indenizatório'.split(' ') },
-  { img: DirRegulatorio, text: 'Direito Regulatório'.split(' ') },
-  { img: DirSocio, text: 'Direito Societário'.split(' ') },
-  { img: DirTrabalho, text: 'Direito Trabalhista'.split(' ') },
-  { img: DirTribute, text: 'Direito Tributário'.split(' ') }
+  { img: DirAdm, alt: 'Dir-Adm', text: 'Direito Administrativo'.split(' '), },
+  { img: DirAgro, alt: 'Dir-Agro', text: 'Direito Agrário'.split(' '), },
+  { img: DirAmbiental, alt: 'Dir-Ambiental', text: 'Direito Ambiental'.split(' '), },
+  { img: DirCivil, alt: 'Dir-Civil', text: 'Direito Cível'.split(' '), },
+  { img: DirComercial, alt: 'Dir-Comercial', text: 'Direito Comercial'.split(' '), },
+  { img: DirConsumer, alt: 'Dir-Consumer', text: 'Direito do Consumidor'.split(), },
+  { img: DirEcono, alt: 'Dir-Econo', text: 'Direito Econômico'.split(' '), },
+  { img: DirEmpresarial, alt: 'Dir-Empresarial', text: 'Direito Empresarial'.split(' '), },
+  { img: DirImobiliario, alt: 'Dir-Imobiliario', text: 'Direito Imobiliário'.split(' '), },
+  { img: DirIndeniza, alt: 'Dir-Indeniza', text: 'Direito Indenizatório'.split(' '), },
+  { img: DirRegulatorio, alt: 'Dir-Regulatorio', text: 'Direito Regulatório'.split(' '), },
+  { img: DirSocio, alt: 'Dir-Socio', text: 'Direito Societário'.split(' '), },
+  { img: DirTrabalho, alt: 'Dir-Trabalho', text: 'Direito Trabalhista'.split(' '), },
+  { img: DirTribute, alt: 'Dir-Tribute', text: 'Direito Tributário'.split(' '), }
 ]
 
 function AreasAtuacao() {
@@ -44,31 +44,16 @@ function AreasAtuacao() {
   const [isMouseOver, setIsMouseOver] = React.useState(false)
 
   const handleMouse = (option) => {
-    switch (option) {
-      case 'stop':
-        if (swiperRef.current && swiperRef.current.swiper) {
-          swiperRef.current.swiper.autoplay.stop();
-        }
-        break;
-      case 'start':
-        if (swiperRef.current && swiperRef.current.swiper) {
-          swiperRef.current.swiper.autoplay.start();
-        }
-        break;
-      default: ''
-        break;
-    }
+    const autoplay = swiperRef.current?.swiper?.autoplay;
+    if (autoplay) option === 'stop' ? autoplay.stop() : autoplay.start()
   };
 
-  const handleMouseEnter = () => {
-    setIsMouseOver(true);
-    handleMouse('stop');
+  const handleMouseEvents = (isMouseOver) => {
+    setIsMouseOver(isMouseOver);
+    handleMouse(isMouseOver ? 'stop' : 'start');
   }
 
-  const handleMouseLeave = () => {
-    setIsMouseOver(false);
-    handleMouse('start');
-  }
+  const lengthSlide = (num) => Math.floor(num);
 
   return (
     <section className="areas-atuacao" id="areasatuacao">
@@ -84,29 +69,18 @@ function AreasAtuacao() {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            640: {
-              slidesPerView: 3,
-
-            },
-            768: {
-              slidesPerView: 5,
-
-            },
-            1024: {
-              slidesPerView: 7,
-
-            },
+            0: { slidesPerView: lengthSlide(slideItem.length / slideItem.length) },
+            640: { slidesPerView: lengthSlide(slideItem.length / 5) },
+            768: { slidesPerView: lengthSlide(slideItem.length / 3) },
+            1024: { slidesPerView: lengthSlide(slideItem.length / 2) },
           }}
           modules={[Autoplay]}
         >
-          {slideItem.map(({ img, text }, index) => (
+          {slideItem.map(({ img, alt, text }, index) => (
             <SwiperSlide className="slide" key={index}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}>
-              <img src={img} alt={`${img + index}`} />
+              onMouseEnter={() => handleMouseEvents(true)}
+              onMouseLeave={() => handleMouseEvents(false)}>
+              <img src={img} alt={alt} />
               {text.map((p) => <p key={p}>{p}</p>)}
             </SwiperSlide>
           ))}

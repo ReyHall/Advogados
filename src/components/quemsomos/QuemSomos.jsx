@@ -3,9 +3,9 @@ import BTM from '../../assets/business-team-manager-meeting.jpg';
 import './QuemSomos.css';
 
 const texts = [
-  { text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcor nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcor nibh euismod tincidunt.' },
+  { text: 'A Távora, Rubin & Matos é uma firma de advocacia fundada em 2007 e focada na assessoria jurídica empresarial na Amazônia.' },
 
-  { text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcor nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcor nibh euismod tincidunt.' }
+  { text: 'Atuamos na área consultiva e contenciosa, no âmbito judicial, extrajudicial e arbitral, proporcionando atendimento individualizado ou em caráter “full service”.' }
 ];
 
 
@@ -18,7 +18,7 @@ function QuemSomos() {
 
       <div className="content">
         <div className="container flex">
-          <h1 className='title'>Um pouco de nossa historia</h1>
+          <h1 className='title'>Quem somos e o que fazemos?</h1>
           <div className="flex-text">
             {texts.map(({ text }, index) => <p key={index}>{text}</p>)}
           </div>

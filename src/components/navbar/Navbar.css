@@ -29,6 +29,19 @@
   font-size: 1.5rem;
   color: var(--ciano);
   text-transform: uppercase;
+  position: relative;
+}
+
+.navbar .flex .menu a.active{
+  color: var(--green);
+}
+
+.navbar .flex .menu a.active::after{
+  content: "▽";
+  position: absolute;
+  top: -2.5rem; left: 50%;
+  transform: translateX(-50%);
+  display: block;
 }
 
 .navbar .flex .menu a:hover{

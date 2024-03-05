@@ -1,0 +1,69 @@
+.advogados{
+  background: linear-gradient(var(--blue) 50%, var(--light-blue) 50%);
+}
+
+.advogados .group-title .sub-title{
+  color: var(--white);
+}
+
+.advogados .slide{
+  margin-bottom: 5rem;
+}
+
+.advogados .slide .imagem:hover .icons{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.advogados .slide .icons{
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: rgba(26,80,136, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.advogados .slide .icons a{
+  color: var(--white);
+  font-size: 3rem;
+}
+
+.advogados .slide .icons a:hover{
+  color: var(--ciano);
+}
+
+.advogados .slide .imagem{
+  position: relative;
+  height: 37rem;
+  overflow: hidden;
+}
+
+.advogados .slide .imagem img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.advogados .slide .name{
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--blue);
+  margin-top: 1rem;
+}
+
+.advogados .slide .oab{
+  color: gray;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.advogados .slide .text{
+  font-size: 1.4rem;
+  margin-top: 1.8rem;
+}

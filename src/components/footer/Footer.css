@@ -1,0 +1,35 @@
+.footer{
+  border-top: 1.4rem solid var(--blue);
+  background: var(--bg);
+  padding-top: 6rem;
+}
+
+.footer img{
+  height: 13.5rem;
+}
+
+.footer .icons{
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer .icons a{
+  font-size: 3rem;
+  color: var(--ciano);
+}
+
+.footer .icons a:hover{
+  color: var(--green);
+}
+
+.footer .credits{
+  text-align: right;
+}
+
+.footer .credits a{
+  font-size: 1.5rem;
+  color: var(--blue);
+  font-weight: bold;
+}

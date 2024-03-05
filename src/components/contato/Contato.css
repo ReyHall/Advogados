@@ -1,0 +1,90 @@
+.contato{
+  background: var(--light-blue);
+}
+
+.contato .group-title .sub-title{
+  color: var(--green);
+}
+
+.contato .group-title .sub-title svg{
+  color: var(--ciano);
+}
+
+.contato .group-title h3{
+  color: var(--blue);
+}
+
+.contato .row{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.contato .row form,
+.contato .row .iframe-contact{
+  flex: 1 1 40rem;
+}
+
+.contato .row form label{
+  font-size: 1.35rem;
+  color: var(--green);
+}
+
+.contato .row form input,
+.contato .row form textarea{
+  width: 100%;
+  padding: 0.8rem 1.3rem;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  border: 0.15rem solid var(--ciano);
+}
+
+.contato .row form textarea{
+  height: 20rem;
+  resize: none;
+}
+
+.contato .row form p{
+  font-size: 1.45rem;
+  color: gray;
+  max-width: 52rem;
+}
+
+.contato .row form p > span{
+  color: var(--green);
+  font-weight: 500;
+}
+
+.contato .row .iframe-contact iframe{
+  width: 100%;
+  height: 51.6rem;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  border: 0.15rem solid var(--ciano);
+}
+
+.contato .row .iframe-contact .content p{
+  font-size: 1.6rem;
+  border-bottom: 0.15rem solid var(--ciano);
+  padding: 1.5rem 0;
+  line-height: 2;
+}
+
+
+.contato .row .iframe-contact .content p svg{
+  color: var(--ciano);
+  position: relative;
+  top: 0.85rem;
+  font-size: 2.8rem;
+  margin-right: 1rem;
+}
+
+.contato .row .iframe-contact .content p a{
+  color: var(--green);
+}
+
+.contato .row .iframe-contact .content p a:hover{
+  color: var(--ciano);
+}
