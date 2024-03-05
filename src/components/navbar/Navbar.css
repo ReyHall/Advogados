@@ -23,6 +23,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  background: var(--white);
 }
 
 .navbar .flex .menu a{
@@ -48,8 +49,35 @@
   color: var(--green);
 }
 
+.navbar .flex .bars{
+  font-size: 2.5rem;
+  color: var(--ciano);
+  cursor: pointer;
+}
+
 @media(max-width: 960px){
   .navbar .flex .logo{
     height: 4rem;
   }
+}
+
+@media(max-width: 860px){
+  .navbar .flex .menu{
+    position: absolute;
+    top: 99%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  .navbar .flex .menu.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .navbar .flex .menu a.active::after{
+    content: "";
+  }
+
 }

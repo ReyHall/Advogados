@@ -2,11 +2,11 @@ import React from "react";
 import { BiLeftArrow } from "react-icons/bi";
 import { BiRightArrow } from "react-icons/bi";
 import UnderlineSimbol from '../../assets/underline-simbol.svg';
-import './NossasRedes.css';
+import './RedesSociais.css';
 
-function NossasRedes() {
+function RedesSociais() {
   return (
-    <section className="nossas-redes">
+    <section className="redes-sociais" id="redessociais">
       <div className="container">
         <hgroup className="group-title">
           <h2 className="sub-title"> <BiLeftArrow /> Redes Sociais <BiRightArrow />
@@ -19,4 +19,4 @@ function NossasRedes() {
   )
 }
 
-export default NossasRedes;
+export default RedesSociais;

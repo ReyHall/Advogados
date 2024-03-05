@@ -32,20 +32,12 @@ function Contato() {
 
         <div className="row">
           <form action="">
-            <label htmlFor="nome">Nome</label>
-            <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
 
-            <label htmlFor="email">Email</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-
-            <label htmlFor="celular">Celular</label>
-            <input type="tel" value={celular} onChange={(e) => setCelular(e.target.value)} />
-
-            <label htmlFor="servico">Servico</label>
-            <input type="text" value={servico} onChange={(e) => setServico(e.target.value)} />
-
-            <label htmlFor="mensagem">Mensagem</label>
-            <textarea name="mensagem" id="" cols="30" rows="10" value={menssagem} onChange={(e) => setMenssagem(e.target.value)} />
+            <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Nome" />
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+            <input type="tel" value={celular} onChange={(e) => setCelular(e.target.value)} placeholder="Celular (Opcional)" />
+            <input type="text" value={servico} onChange={(e) => setServico(e.target.value)} placeholder="Serviço (Opcional)" />
+            <textarea name="mensagem" id="" cols="30" rows="10" value={menssagem} onChange={(e) => setMenssagem(e.target.value)} placeholder="Mensagem" required />
 
             <p className="politica-privacidade">Nosso escritório respeita a sua privacidade e utiliza seus dados pessoais apenas para a finalidade solicitada. Para saber mais, confira nossa <span>Política de Privacidade.</span></p>
           </form>

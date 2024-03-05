@@ -1,4 +1,5 @@
 import React from "react";
+import { FaBars } from "react-icons/fa";
 import TRM from '../../assets/TRM-logo.svg';
 import './Navbar.css';
 
@@ -6,22 +7,34 @@ const links = [
   { href: '#quemsomos', text: 'Quem Somos' },
   { href: '#areasatuacao', text: 'Áreas de atuação' },
   { href: '#advogados', text: 'Advogados' },
+  { href: '#redessociais', text: 'Redes Sociais' },
   { href: '#contato', text: 'Contato' }
 ]
 
 
 function Navbar() {
   const [nav, setNav] = React.useState('');
+  const [menu, setMenu] = React.useState('');
+  const [width, setWidth] = React.useState(window.innerWidth);
 
   function scrollToSection(event) {
     event.preventDefault();
     const href = event.target.getAttribute('href');
-    const top = document.querySelector(href).offsetTop - 85;
+    const top = document.querySelector(href).offsetTop - 64;
     window.scrollTo({
       top: top,
       behavior: 'smooth'
     })
   }
+
+  React.useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [])
 
 
   React.useEffect(() => {
@@ -32,6 +45,7 @@ function Navbar() {
     function handleScroll() {
       const headerOne = document.querySelector('.header .header-one');
       setNav(window.scrollY >= (headerOne?.clientHeight || 0) ? 'active' : '');
+      setMenu(false);
     }
 
     function scrollSpy() {
@@ -59,17 +73,18 @@ function Navbar() {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('scroll', scrollSpy);
     }
-  }, [])
+  }, [nav])
 
   return (
     <nav className={`navbar ${nav}`} >
       <div className="container flex">
         <img className="logo" src={TRM} alt="trm" />
-        <div className="menu">
+        <div className={`menu ${menu ? 'active' : ''}`}>
           {links.map(({ href, text }, index) => (
             <a onClick={scrollToSection} href={href} key={index}>{text}</a>
           ))}
         </div>
+        {width <= 860 && <FaBars onClick={() => setMenu(!menu)} className="bars" />}
       </div>
     </nav>
   )

@@ -40,7 +40,7 @@ function Header() {
   return (
 
     <header className="header">
-      {width > 830 && (
+      {width >= 860 && (
         <div className="header-one">
           <div className="flex">
             <div className="means-of-contact">

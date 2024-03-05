@@ -1,8 +1,6 @@
 import React from "react";
 import { BiLeftArrow } from "react-icons/bi";
 import { BiRightArrow } from "react-icons/bi";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
 import { BsFacebook } from "react-icons/bs";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import UnderlineSimbol from '../../assets/underline-simbol.svg'
@@ -14,7 +12,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './Advogados.css';
 
-const slideItem = [
+const advogadoItem = [
   {
     img: Advogado1,
     alt: 'advogado-1',
@@ -123,36 +121,9 @@ function Advogados() {
           <h3>Conheça nosso time de profissionais</h3>
         </hgroup>
 
-        <Swiper
-          loop={true}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-              slidesPerGroup: 1,
-              spaceBetween: 30,
-              pagination: false
-            },
-            640: {
-              slidesPerView: 2,
-              slidesPerGroup: 2,
-              spaceBetween: 30,
-            },
-            768: {
-              slidesPerView: 3,
-              slidesPerGroup: 3,
-              spaceBetween: 30,
-            },
-            1024: {
-              slidesPerView: 4,
-              slidesPerGroup: 4,
-              spaceBetween: 30,
-            },
-          }}
-          modules={[Pagination]}
-        >
-          {slideItem.map(({ img, alt, redes, name, span, text }, index) => (
-            <SwiperSlide className="slide" key={index}>
+        <div className="box-container">
+          {advogadoItem.map(({ img, alt, redes, name, span, text }, index) => (
+            <div className="box" key={index}>
               <div className="imagem">
                 <img src={img} alt={alt} />
                 <div className="icons">
@@ -167,9 +138,9 @@ function Advogados() {
                 <span className="oab">{span}</span>
                 <p className="text">{text}</p>
               </div>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
+        </div>
       </div>
     </section>
   )

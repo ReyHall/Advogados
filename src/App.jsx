@@ -4,7 +4,7 @@ import Navbar from './components/navbar/Navbar';
 import QuemSomos from './components/quemsomos/QuemSomos';
 import AreasAtuacao from './components/areasatuacao/AreasAtuacao';
 import Advogados from './components/advogados/Advogados';
-import NossasRedes from './components/nossasredes/NossasRedes';
+import RedesSociais from './components/redessociais/RedesSociais';
 import Contato from './components/contato/Contato';
 import Footer from './components/footer/Footer';
 
@@ -16,7 +16,7 @@ function App() {
       <QuemSomos />
       <AreasAtuacao />
       <Advogados />
-      <NossasRedes />
+      <RedesSociais />
       <Contato />
       <Footer />
     </>

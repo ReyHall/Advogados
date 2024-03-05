@@ -1,0 +1,7 @@
+.redes-sociais{
+  background: var(--green);
+}
+
+.redes-sociais .group-title .sub-title{
+  color: var(--white);
+}

@@ -44,3 +44,11 @@
   color: var(--green);
   font-size: 1.4rem;
 }
+
+
+
+@media(max-width: 460px){
+  .quem-somos .content .flex-text p{
+    font-size: 1.55rem;
+  }
+}
