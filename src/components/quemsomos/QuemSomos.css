@@ -41,7 +41,7 @@
 .quem-somos .content .flex-text p{
   flex-shrink: 0;
   max-width: 40rem;
-  color: var(--green);
+  color: var(--gray);
   font-size: 1.4rem;
 }
 

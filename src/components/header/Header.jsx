@@ -3,19 +3,40 @@ import { FiPhone } from "react-icons/fi";
 import { RxEnvelopeClosed } from "react-icons/rx";
 import { PiMapPinLight } from "react-icons/pi";
 import { BsFacebook } from "react-icons/bs";
-import { FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import scrollToSection from "../../methods/scrollToSection";
 import './Header.css';
 
 const means = [
-  { icon: <PiMapPinLight />, text: 'Onde estamos', href: '#contato' },
-  { icon: <FiPhone />, text: '(91) 988923-0344', href: 'tel:91889230344' },
-  { icon: <RxEnvelopeClosed />, text: 'exemplo@trm.com.br', href: 'mailto:' }
+  {
+    icon: <PiMapPinLight />,
+    text: 'Onde estamos',
+    href: '#contato',
+    target: '',
+    func: scrollToSection
+  },
+
+  {
+    icon: <FiPhone />,
+    text: '(91) 98116-7240',
+    href: 'tel:(91)981167240',
+    target: '_blank',
+    func: null,
+  },
+
+  {
+    icon: <RxEnvelopeClosed />,
+    text: 'contato@rubinrocha.com.br',
+    href: 'mailto:contato@rubinrocha.com.br',
+    target: '_blank',
+    func: null
+  }
 ];
 
 const socialMedia = [
-  { icon: <BsFacebook />, link: '' },
-  { icon: <FaTwitter />, link: '' },
-  { icon: <FaLinkedin />, link: '' }
+  { icon: <BsFacebook />, link: 'https://www.facebook.com/trm.adv' },
+  { icon: <FaInstagram />, link: 'https://www.instagram.com/trm.advocacia/' },
+  { icon: <FaLinkedin />, link: 'https://www.linkedin.com/company/trmadvogados/' }
 ];
 
 const options = [
@@ -44,14 +65,14 @@ function Header() {
         <div className="header-one">
           <div className="flex">
             <div className="means-of-contact">
-              {means.map(({ icon, text, href }, index) => (
-                <a className="means" href={href} key={index}> {icon} {text}</a>
+              {means.map(({ icon, text, href, target, func }, index) => (
+                <a onClick={func} target={target} className="means" href={href} key={index}> {icon} {text}</a>
               ))}
             </div>
 
             <div className="social-media">
               {socialMedia.map(({ icon, link }, index) => (
-                <a href={link} key={index}> {icon} </a>
+                <a target="_blank" href={link} key={index}> {icon} </a>
               ))}
             </div>
 

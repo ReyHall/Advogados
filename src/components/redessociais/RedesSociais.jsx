@@ -12,7 +12,7 @@ function RedesSociais() {
           <h2 className="sub-title"> <BiLeftArrow /> Redes Sociais <BiRightArrow />
             <img className="underline-img" src={UnderlineSimbol} alt="underline-img" />
           </h2>
-          <h3>A gente nas redes sociais</h3>
+          <h3>Nosso escritório nas redes sociais</h3>
         </hgroup>
       </div>
     </section>

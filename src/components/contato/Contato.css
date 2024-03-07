@@ -36,7 +36,7 @@
   width: 100%;
   padding: 0.8rem 1.3rem;
   font-size: 1.5rem;
-  margin: 0.5rem 0;
+  margin-bottom: 1rem;
   border-radius: 0.5rem;
   border: 0.15rem solid var(--ciano);
 }
@@ -59,11 +59,28 @@
   font-size: 1.45rem;
   color: gray;
   max-width: 52rem;
+  margin-top: 2rem;
 }
 
 .contato .row form p > span{
   color: var(--green);
   font-weight: 500;
+}
+
+.contato .row form .btn{
+  display: inline-block;
+  width: auto;
+  background: var(--blue);
+  padding: 0.8rem 1.5rem;
+  color: var(--white);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.contato .row form .btn:hover{
+  background: none;
+  border: 0.15rem solid var(--ciano);
+  color: var(--ciano);
 }
 
 .contato .row .iframe-contact iframe{

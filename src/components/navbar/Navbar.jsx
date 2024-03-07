@@ -1,6 +1,7 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
 import TRM from '../../assets/TRM-logo.svg';
+import scrollToSection from "../../methods/scrollToSection";
 import './Navbar.css';
 
 const links = [
@@ -17,20 +18,12 @@ function Navbar() {
   const [menu, setMenu] = React.useState('');
   const [width, setWidth] = React.useState(window.innerWidth);
 
-  function scrollToSection(event) {
-    event.preventDefault();
-    const href = event.target.getAttribute('href');
-    const top = document.querySelector(href).offsetTop - 64;
-    window.scrollTo({
-      top: top,
-      behavior: 'smooth'
-    })
-  }
-
   React.useEffect(() => {
     function handleResize() {
       setWidth(window.innerWidth);
     }
+
+    handleResize();
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);

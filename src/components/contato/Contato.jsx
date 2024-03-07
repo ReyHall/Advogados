@@ -39,6 +39,8 @@ function Contato() {
             <input type="text" value={servico} onChange={(e) => setServico(e.target.value)} placeholder="Serviço (Opcional)" />
             <textarea name="mensagem" id="" cols="30" rows="10" value={menssagem} onChange={(e) => setMenssagem(e.target.value)} placeholder="Mensagem" required />
 
+            <input type="submit" className="btn" />
+
             <p className="politica-privacidade">Nosso escritório respeita a sua privacidade e utiliza seus dados pessoais apenas para a finalidade solicitada. Para saber mais, confira nossa <span>Política de Privacidade.</span></p>
           </form>
 

@@ -68,4 +68,5 @@
 .advogados .box-container .box .text{
   font-size: 1.4rem;
   margin-top: 1.8rem;
+  color: var(--gray);
 }
