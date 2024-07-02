@@ -19,6 +19,7 @@ function Contato() {
   const [celular, setCelular] = React.useState('');
   const [servico, setServico] = React.useState('');
   const [menssagem, setMenssagem] = React.useState('');
+  const ACTION = import.meta.env.BACKEND_URL_ACTION + "/email";
 
   return (
     <section className="contato" id="contato">
@@ -31,7 +32,7 @@ function Contato() {
         </hgroup>
 
         <div className="row">
-          <form action={process.env.BACKEND_URL_HOST | ""}>
+          <form action={ACTION}>
 
             <input type="text" name="name" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Nome" />
             <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
