@@ -1,0 +1,83 @@
+.navbar{
+  background: white;
+}
+
+.navbar.active{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .flex .logo{
+  height: 6rem;
+  width: auto;
+}
+
+.navbar .flex .menu{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: var(--white);
+}
+
+.navbar .flex .menu a{
+  font-size: 1.6rem;
+  color: var(--ciano);
+  text-transform: uppercase;
+  position: relative;
+}
+
+.navbar .flex .menu a.active{
+  color: var(--green);
+}
+
+.navbar .flex .menu a.active::after{
+  content: "▽";
+  position: absolute;
+  top: -2.5rem; left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
+
+.navbar .flex .menu a:hover{
+  color: var(--green);
+}
+
+.navbar .flex .bars{
+  font-size: 2.5rem;
+  color: var(--ciano);
+  cursor: pointer;
+}
+
+@media(max-width: 960px){
+  .navbar .flex .logo{
+    height: 4rem;
+  }
+}
+
+@media(max-width: 860px){
+  .navbar .flex .menu{
+    position: absolute;
+    top: 99%; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  .navbar .flex .menu.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .navbar .flex .menu a.active::after{
+    content: "";
+  }
+
+}

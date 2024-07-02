@@ -1,0 +1,41 @@
+.footer{
+  border-top: 1.4rem solid var(--blue);
+  background: var(--bg);
+  padding: 2rem 0;
+}
+
+.footer img{
+  height: 5rem;
+}
+
+.footer .flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.footer .icons{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer .icons a{
+  font-size: 3rem;
+  color: var(--ciano);
+}
+
+.footer .icons a:hover{
+  color: var(--green);
+}
+
+.footer .credits{
+  text-align: right;
+}
+
+.footer .credits a{
+  font-size: 1.2rem;
+  color: var(--blue);
+}
