@@ -19,7 +19,8 @@ function Contato() {
   const [celular, setCelular] = React.useState('');
   const [servico, setServico] = React.useState('');
   const [menssagem, setMenssagem] = React.useState('');
-  const ACTION = import.meta.env.BACKEND_URL_ACTION + "/email";
+  const ACTION = `${import.meta.env.VITE_BACKEND_URL_ACTION}/email`;
+  console.log(ACTION)
 
   return (
     <section className="contato" id="contato">
