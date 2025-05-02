@@ -1,0 +1,21 @@
+.redes-sociais{
+  background: var(--green);
+}
+
+.redes-sociais .group-title .sub-title{
+  color: var(--white);
+}
+
+.redes-sociais .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+
+.redes-sociais .slide img,
+.redes-sociais .slide video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
